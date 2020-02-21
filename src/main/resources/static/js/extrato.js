@@ -28,10 +28,16 @@ var Extrato = (function(){
             var tipoOperacao = row.insertCell(1);
             var valorOperacao = row.insertCell(2);
 
-            dataOperacao.innerHTML = extrato.dataOperacao;
+            dataOperacao.innerHTML = extrato.dataOperacao ? new Date(extrato.dataOperacao).toLocaleDateString("pt-br") : null;
             tipoOperacao.innerHTML = extrato.tipoOperacao;
-            valorOperacao.innerHTML = extrato.valorOperacao;
+            valorOperacao.innerHTML = adicionaMascarasDoValor(valorOperacao, extrato.valorOperacao);
         });
+    };
+
+    var adicionaMascarasDoValor = function(element, valor){
+        valor > 0 ? element.classList.add("positivo") : element.classList.add("negativo");
+        var valorMask = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        return valorMask;
     };
 
     function init() {

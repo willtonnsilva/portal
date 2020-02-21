@@ -25,3 +25,11 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.positivo {
+    color: green;
+}
+
+.negativo {
+    color: red;
+}
