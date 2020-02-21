@@ -3,6 +3,10 @@
     font-weight: bold;
 }
 
+h4 {
+    font-weight: bold;
+}
+
 #breadcrumb {
     padding-top: 30px;
     margin: 5px;
@@ -32,4 +36,9 @@
 
 .negativo {
     color: red;
+}
+
+h3 {
+    padding-top: 30px;
+    font-weight: bold;
 }
