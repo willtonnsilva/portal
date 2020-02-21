@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma - Portal Empresa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/extrato.css">
+</head>
+<body>
+    <div class="container">
+        <nav id="menu-nav" class="navbar">
+            <h4 class="col-md-4">Portal Empresa - Soma</h4>
+            <div id="butonsLinks" class="col-md-4">
+                <button type="button" class="btn btn-light">Extrato</button>
+                <button type="button" class="btn btn-light">Funcionarios</button>
+            </div>
+            <div class="col-md-4">
+                <span> Login: Wilton Silva </span>
+            </div>
+        </nav>
+
+        <nav id="breadcrumb" aria-label="breadcrumb" class="col-md-2">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Extrato</li>
+            </ol>
+        </nav>
+
+        <div class="col-md-12">
+            <div class="row">
+                <div id="tabelaExtrato" class="col-md-8">
+                    <table id="gridExtratos" class="table">
+                        <thead class="thead-light">
+                            <th scope="col"> Data Operação </th>
+                            <th scope="col"> Tipo Operação </th>
+                            <th scope="col"> Valor Operação </th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    teste2
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="/js/extrato.js"></script>
+</html>

@@ -1,0 +1,27 @@
+#menu-nav {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#breadcrumb {
+    padding-top: 30px;
+    margin: 5px;
+    font-size: 12px;
+}
+
+#tabelaExtrato {
+    font-size: 12px;
+    padding-top: 30px;
+}
+
+#butonsLinks button {
+    font-weight: bold;
+    border-radius: 10px;
+    border: #000000 0.45px solid;
+    text-decoration: none;
+}
+
+#butonsLinks :first-child{
+    padding-left: 20px;
+    padding-right: 20px;
+}
