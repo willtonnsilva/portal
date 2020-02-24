@@ -1,24 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> Soma - Portal Empresa </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/application.css">
-</head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/decorator/imports.html"></head>
 <body>
     <div class="container">
-        <nav id="menu-nav" class="navbar">
-            <h4 class="col-md-4">Portal Empresa - Soma</h4>
-            <div id="butonsLinks" class="col-md-4">
-                <a id="btn-extrato" title="Extrato" class="btn btn-light" href="/"> Extrato </a>
-                <a id="btn-funcionarios" title="Funcionarios" class="btn btn-light" href="/funcionario"> Funcionários </a>
-            </div>
-            <div class="col-md-4">
-                <span> Login: Wilton Silva </span>
-            </div>
-        </nav>
-
+        <div th:insert="/decorator/menu.html"></div>
         <nav id="breadcrumb" aria-label="breadcrumb" class="col-md-2">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -46,11 +31,7 @@
                 </div>
             </div>
         </div>
-
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
 <script src="/js/extrato.js"></script>
 </html>
