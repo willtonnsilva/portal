@@ -15,8 +15,7 @@ import java.util.Date;
 public class Extrato implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "SQ_EXTRATO")
-    @SequenceGenerator(name = "SQ_EXTRATO", sequenceName = "SQ_EXTRATO")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Temporal(value = TemporalType.DATE)
