@@ -19,23 +19,18 @@ var Funcionario = (function () {
     var desmontaDadosAtuaisDaGrid = function () {
         var tabela = document.getElementById('grid');
         var linhas = tabela.getElementsByTagName('tr');
-
+        debugger
         if (linhas.length < 2) return;
 
         for (var i = 0; i < linhas.length; i++){
-            tabela.deleteRow(1)
+            tabela.deleteRow(0)
         }
     };
 
 
     var montaGridFuncionarios = function (funcionarios) {
 
-        if (!funcionarios) return;
-
-        desmontaDadosAtuaisDaGrid();
-
         var table = document.getElementById("grid");
-        // ajustaCabecalhoDaGrid(table);
 
         funcionarios.forEach(function (funcionario, index) {
             var row = table.tBodies[0].insertRow();
@@ -49,22 +44,6 @@ var Funcionario = (function () {
         });
     };
 
-    var ajustaCabecalhoDaGrid = function (table) {
-        table.tHead.deleteRow(0);
-        var theadMatricula = document.createElement("th");
-        var theadNome = document.createElement("th");
-        var theadFuncao = document.createElement("th");
-        var theadGrid = document.getElementById("headGrid");
-        theadMatricula.innerHTML = "Matricula";
-        theadNome.innerHTML = "Nome";
-        theadFuncao.innerHTML = "Função";
-        var tr = document.createElement("th");
-        tr.appendChild(theadMatricula);
-        tr.appendChild(theadNome);
-        tr.appendChild(theadFuncao);
-        theadGrid.appendChild(tr);
-    };
-
     function init() {
         getFuncionarios();
     }
@@ -74,3 +53,7 @@ var Funcionario = (function () {
     }
 
 })();
+
+$(document).ready(function() {
+    Funcionario.init();
+});

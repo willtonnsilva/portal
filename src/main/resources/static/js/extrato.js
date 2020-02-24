@@ -16,15 +16,30 @@ var Extrato = (function(){
         });
     };
 
+    var getSaldo = function (){
+        $.ajax({
+            type: 'GET',
+            url: "/v1/api/saldo",
+            dataType: "json",
+            success: function(value, textStatus, jqXHR) {
+                var saldo = document.getElementById("saldo");
+                value < 0 ? saldo.classList.add("negativo") : saldo.classList.add("positivo");
+                saldo.innerHTML = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            },
+            error: function(xhr, status, error) {
+                $.handleErrorResponse(xhr, status, error);
+            }
+        });
+    };
+
     //tirando os dados da tabela, mas mantendo o cabecario
     var desmontaDadosAtuaisDaGrid = function () {
         var tabela = document.getElementById('grid');
         var linhas = tabela.getElementsByTagName('tr');
 
         if (linhas.length < 2) return;
-        debugger
         for (var i = 0; i < linhas.length; i++){
-            tabela.deleteRow(1)
+            tabela.deleteRow(0)
         }
     };
 
@@ -34,7 +49,7 @@ var Extrato = (function(){
 
         desmontaDadosAtuaisDaGrid();
         var table = document.getElementById("grid");
-        // ajustaCabecalhoDaGrid(table);
+        ajustaCabecalhoDaGrid(table);
         extratos.forEach(function (extrato, index) {
             var row = table.tBodies[0].insertRow();
 
@@ -70,6 +85,7 @@ var Extrato = (function(){
 
     function init() {
         getExtratos();
+        getSaldo();
     }
 
     return {
@@ -77,3 +93,7 @@ var Extrato = (function(){
     }
 
 })();
+
+$(document).ready(function() {
+    Extrato.init();
+});
