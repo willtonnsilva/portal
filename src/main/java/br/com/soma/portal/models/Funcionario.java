@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "FUNCIONARIO")
@@ -13,8 +14,9 @@ import java.io.Serializable;
 public class Funcionario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "SQ_FUNCIONARIO")
+    @SequenceGenerator(name = "SQ_FUNCIONARIO", sequenceName = "SQ_FUNCIONARIO")
+    private Integer id;
 
     @Column(name = "MATRICULA", length = 50, nullable = false)
     private String matricula;

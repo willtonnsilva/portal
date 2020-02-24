@@ -32,24 +32,8 @@ var Extrato = (function(){
         });
     };
 
-    //tirando os dados da tabela, mas mantendo o cabecario
-    var desmontaDadosAtuaisDaGrid = function () {
-        var tabela = document.getElementById('grid');
-        var linhas = tabela.getElementsByTagName('tr');
-
-        if (linhas.length < 2) return;
-        for (var i = 0; i < linhas.length; i++){
-            tabela.deleteRow(0)
-        }
-    };
-
     var montaGridExtratos = function (extratos) {
-
-        if (!extratos) return;
-
-        desmontaDadosAtuaisDaGrid();
         var table = document.getElementById("grid");
-        ajustaCabecalhoDaGrid(table);
         extratos.forEach(function (extrato, index) {
             var row = table.tBodies[0].insertRow();
 
@@ -63,24 +47,9 @@ var Extrato = (function(){
         });
     };
 
-    var ajustaCabecalhoDaGrid = function (table) {
-        table.tHead.deleteRow(0);
-        var theadMatricula = document.createElement("th");
-        var theadNome = document.createElement("th");
-        var theadFuncao = document.createElement("th");
-        var theadGrid = document.getElementById("headGrid");
-        theadMatricula.innerHTML = "Data Operação";
-        theadNome.innerHTML = "Tipo Operação";
-        theadFuncao.innerHTML = "Valor Operação";
-        theadGrid.appendChild(theadMatricula);
-        theadGrid.appendChild(theadNome);
-        theadGrid.appendChild(theadFuncao);
-    };
-
     var adicionaMascarasDoValor = function(element, valor){
         valor > 0 ? element.classList.add("positivo") : element.classList.add("negativo");
-        var valorMask = valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-        return valorMask;
+        return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     };
 
     function init() {

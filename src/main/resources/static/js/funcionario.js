@@ -1,4 +1,5 @@
 var Funcionario = (function () {
+
     'use strict';
 
     var getFuncionarios = function () {
@@ -14,19 +15,6 @@ var Funcionario = (function () {
             }
         });
     };
-
-    //tirando os dados da tabela, mas mantendo o cabecario
-    var desmontaDadosAtuaisDaGrid = function () {
-        var tabela = document.getElementById('grid');
-        var linhas = tabela.getElementsByTagName('tr');
-        debugger
-        if (linhas.length < 2) return;
-
-        for (var i = 0; i < linhas.length; i++){
-            tabela.deleteRow(0)
-        }
-    };
-
 
     var montaGridFuncionarios = function (funcionarios) {
 
